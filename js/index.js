@@ -6,6 +6,10 @@
 		setTimeout(function(){
 			$(this).removeAttr('style')
 		}.bind(this),500)
-		/* Act on the event */
+		snsEvent.trigger('randomSounds')
 	});
+})
+
+snsEvent.listen('randomSounds',function(){
+	console.log('bofang')
 })
