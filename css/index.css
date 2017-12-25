@@ -1,0 +1,48 @@
+fieldset,img{border:0}
+*,a:focus,input:focus{outline:0}
+a,body{color:#333}
+.cl,.fix:after{clear:both}
+.block,.fix:after{display:block}
+.hm,.hvm{left:50%}
+*,.bbox,.layout,div,p{-webkit-box-sizing:border-box}
+article,aside,blockquote,body,button,code,dd,dialog,div,dl,dt,fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,input,legend,li,nav,ol,p,pre,section,td,textarea,th,ul{margin:0;padding:0}
+input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}
+li,ol,ul{list-style:none}
+em,i{font-style:normal}
+del{text-decoration:line-through}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}
+img{max-width:100%}
+a{text-decoration:none}
+a:active{opacity:.7}
+*{-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:none;overflow-y:scroll}
+body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-serif}
+.w{margin:0 auto;max-width:15rem}
+.fix:after{content:'';visibility:hidden}
+.fl{float:left}
+.fr{float:right}
+.hide{display:none}
+.main{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+.main .container{
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+.main .item{
+	float: left;
+	width: 25%;
+	height: 12.5%;
+	background: #000;
+	opacity: 0;
+	transition: opacity .4s 
+}
