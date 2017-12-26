@@ -46,3 +46,6 @@ body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-se
 	opacity: 0;
 	transition: opacity .4s 
 }
+.main .item.active{
+	opacity: .2;
+}
