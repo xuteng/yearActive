@@ -49,6 +49,21 @@ body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-se
 	background: url(images/part2.png) no-repeat center center #4cbaad;
 	background-size: 50%;
 }
+.container.part3{
+	background: url(images/part3.png) no-repeat center center #f6b55f;
+	background-size: 50%;
+}
+.container.part4{
+	background: url(images/part4.png) no-repeat center center #fff;
+	background-size: 50%;
+}
+.container.part5{
+	background: url(images/part5.png) no-repeat center center #fff;
+	background-size: 50%;
+}
+.container.nobg{
+	background-image: none;
+}
 .main .item{
 	float: left;
 	width: 25%;

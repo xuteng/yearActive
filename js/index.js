@@ -1,5 +1,54 @@
 var preload;
 var active = {
+	pageAnimateActions:[function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.jpg" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,30)+'%',
+			left: 0,
+			width:'100%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('zoomIn animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1800)
+		setTimeout(function(){
+			img.remove()
+		},2000)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.jpg" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,30)+'%',
+			left: 0,
+			width:'100%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('slideInLeft animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.jpg" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,30)+'%',
+			left: 0,
+			width:'100%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('slideInRight animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	}],
 	animateActions:[function(domObj){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+' init1" ><\/img>');
 		img.appendTo('.actives')
@@ -11,12 +60,12 @@ var active = {
 		}.bind(this),300)
 		setTimeout(function(){
 			img.removeClass('enter1').addClass('leave1')
-		},2000)
+		},1200)
 		setTimeout(function(){
 			img.remove()
-		},2300)
+		},1500)
 	},function(domObj){
-		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+' init2" ><\/img>');
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+' init2" />');
 		img.css({
 			top:GetRandomNum(20,60)+'%',
 			left: GetRandomNum(20,60)+'%',
@@ -30,27 +79,186 @@ var active = {
 		},1200)
 		setTimeout(function(){
 			img.remove()
-		},2100)
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			bottom:GetRandomNum(20,60)+'%',
+			right: GetRandomNum(20,60)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('jackInTheBox animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,60)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('bounceInDown animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,60)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('bounceInUp animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,60)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('flipInY animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,50)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('rotateIn animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,50)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('slideInLeft animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,50)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('slideInRight animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,50)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('zoomInDown animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1800)
+		setTimeout(function(){
+			img.remove()
+		},2000)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,50)+'%',
+			width:GetRandomNum(30,50)+'%'
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('zoomInUp animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1800)
+		setTimeout(function(){
+			img.remove()
+		},2000)
+	},function(domObj){
+		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
+		img.css({
+			top:GetRandomNum(20,60)+'%',
+			left: GetRandomNum(20,50)+'%',
+			width:GetRandomNum(30,50)+'%',
+			opacity:0
+		}).appendTo('.actives')
+		setTimeout(function(){
+			img.addClass('rollIn animated')
+		}.bind(this))
+		setTimeout(function(){
+			img.addClass('leave1')
+		},1200)
+		setTimeout(function(){
+			img.remove()
+		},1500)
 	}],
 	curDoms: 0,
 	activeDoms:[{
 		id:'part1',
 		doms:['a1','a2','a3','a4','a5','a6','a7','a8','a9'],
-		domSize:['405*325','313*333','301*302','456*378','398*104','405*324','211*223','297*417','512*106'],
 		domIndex:-1,
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').addClass(this.id)
+					$('.container').removeClass('nobg').addClass(this.id)
 					this.domIndex++;
 					return
 				}
+				$('.container').addClass('nobg');
 				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
 				this.domIndex++;
-		
 			}else{
 				active.curDoms++;
-				console.log(active.curDoms,active.activeDoms.length)
 				if(active.curDoms==active.activeDoms.length){
 					snsEvent.trigger('toShare')
 				}
@@ -58,22 +266,85 @@ var active = {
 		}
 	},{
 		id:'part2',
-		doms:['b1','b2','b3','b4','b5','b6','b7','b8'],
-		domSize:['405*325','313*333','301*302','456*378','398*104','405*324','211*223','297*417'],
+		doms:['b1','b2','b3','b4','b5','b6','b7','b8','b9','b10','b11','b12','b13'],
 		domIndex:-1,
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').addClass(this.id)
+					$('.container').removeClass('nobg').addClass(this.id)
 					this.domIndex++;
 					return
 				}
-				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				$('.container').addClass('nobg');
+				if(this.domIndex==2||this.domIndex==10||this.domIndex==11){
+					(active.pageAnimateActions[GetRandomNum(0,active.pageAnimateActions.length-1)])(this);
+				}else{
+					(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
+				}
 				this.domIndex++;
-		
 			}else{
 				active.curDoms++;
-				console.log(active.curDoms,active.activeDoms.length)
+				if(active.curDoms==active.activeDoms.length){
+					snsEvent.trigger('toShare')
+				}
+			}
+		}
+	},{
+		id:'part3',
+		doms:['c1','c2','c3','c4','c5','c6'],
+		domIndex:-1,
+		activeAction:function(){
+			if(this.domIndex<this.doms.length){
+				if(this.domIndex==-1){
+					$('.container').removeClass('nobg').addClass(this.id)
+					this.domIndex++;
+					return
+				}
+				$('.container').addClass('nobg');
+				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				this.domIndex++;
+			}else{
+				active.curDoms++;
+				if(active.curDoms==active.activeDoms.length){
+					snsEvent.trigger('toShare')
+				}
+			}
+		}
+	},{
+		id:'part4',
+		doms:['d1','d2','d3','d4','d5','d6','d7','d8'],
+		domIndex:-1,
+		activeAction:function(){
+			if(this.domIndex<this.doms.length){
+				if(this.domIndex==-1){
+					$('.container').removeClass('nobg').addClass(this.id)
+					this.domIndex++;
+					return
+				}
+				$('.container').addClass('nobg');
+				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				this.domIndex++;
+			}else{
+				active.curDoms++;
+				if(active.curDoms==active.activeDoms.length){
+					snsEvent.trigger('toShare')
+				}
+			}
+		}
+	},{
+		id:'part5',
+		doms:['e1','e2','e3','e4','e5','e6','e7','e8','e9','e10','e11','e12'],
+		domIndex:-1,
+		activeAction:function(){
+			if(this.domIndex<this.doms.length){
+				if(this.domIndex==-1){
+					$('.container').removeClass('nobg').addClass(this.id)
+				}
+				$('.container').addClass('nobg')
+				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				this.domIndex++;
+			}else{
+				active.curDoms++;
 				if(active.curDoms==active.activeDoms.length){
 					snsEvent.trigger('toShare')
 				}
@@ -138,7 +409,6 @@ var active = {
 			$.each(this.activeDoms,function(index,doms){
 				doms.domIndex = -1
 			})
-			return
 		}
 		(this.activeDoms[this.curDoms]).activeAction()
 	}
