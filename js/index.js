@@ -250,12 +250,12 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id)
+					$('.container').removeClass('nobg').addClass(this.id);
 					this.domIndex++;
-					return
+					return;
 				}
 				$('.container').addClass('nobg');
-				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
 				this.domIndex++;
 			}else{
 				active.curDoms++;
@@ -271,12 +271,12 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id)
+					$('.container').removeClass('nobg').addClass(this.id);
 					this.domIndex++;
-					return
+					return;
 				}
 				$('.container').addClass('nobg');
-				if(this.domIndex==2||this.domIndex==10||this.domIndex==11){
+				if(this.domIndex==2||this.domIndex==4||this.domIndex==10||this.domIndex==11){
 					(active.pageAnimateActions[GetRandomNum(0,active.pageAnimateActions.length-1)])(this);
 				}else{
 					(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
@@ -296,12 +296,12 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id)
+					$('.container').removeClass('nobg').addClass(this.id);
 					this.domIndex++;
-					return
+					return;
 				}
 				$('.container').addClass('nobg');
-				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
 				this.domIndex++;
 			}else{
 				active.curDoms++;
@@ -317,12 +317,12 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id)
+					$('.container').removeClass('nobg').addClass(this.id);
 					this.domIndex++;
-					return
+					return;
 				}
 				$('.container').addClass('nobg');
-				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
 				this.domIndex++;
 			}else{
 				active.curDoms++;
@@ -338,10 +338,37 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id)
+					$('.container').removeClass('nobg').addClass(this.id);
+					this.domIndex++;
+					return;
 				}
-				$('.container').addClass('nobg')
-				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this)
+				$('.container').addClass('nobg');
+				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
+				this.domIndex++;
+			}else{
+				active.curDoms++;
+				if(active.curDoms==active.activeDoms.length){
+					snsEvent.trigger('toShare')
+				}
+			}
+		}
+	},{
+		id:'part6',
+		doms:['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11'],
+		domIndex:-1,
+		activeAction:function(){
+			if(this.domIndex<this.doms.length){
+				if(this.domIndex==-1){
+					$('.container').removeClass('nobg').addClass(this.id);
+					this.domIndex++;
+					return;
+				}
+				$('.container').addClass('nobg');
+				var img = $('<img src="img\/'+this.doms[this.domIndex]+'.png" class="f-hide '+this.doms[this.domIndex]+'" />');
+				img.appendTo('.actives')
+				setTimeout(function() {
+					img.addClass('active')
+				},20)
 				this.domIndex++;
 			}else{
 				active.curDoms++;
@@ -406,6 +433,7 @@ var active = {
 	domAdd:function(){
 		if(this.activeDoms.length==this.curDoms){
 			this.curDoms=0
+			$('.container').removeClass('part1 part2 part3 part4 part5 part6 nobg').find('.actives').empty()
 			$.each(this.activeDoms,function(index,doms){
 				doms.domIndex = -1
 			})
@@ -435,6 +463,7 @@ snsEvent.listen('toShare',function(){
 	},300)
 })
 function init() {
+	alert(1)
 	var assetsPath = "audio/";
 	var sounds = [
 		{src: "9.mp3", id: 0},
@@ -457,6 +486,8 @@ var backSound
 function soundLoaded(event) {
 	i++;	
 	if(i==9){
+		alert(2)
+		$('.loading').addClass('hide')
 		active.domEvents();
 		backSound = createjs.Sound.play(0,{loop:-1})
 	}
@@ -474,5 +505,50 @@ function GetRandomNum(Min,Max){
 }   
 
 ;$(function(){
-	init();
+	// 50ms轮询是否加载完毕
+	var rec = [],resMap=[];
+	$.each(active.activeDoms,function(index, el) {
+		$.each(el.doms, function(index, val) {
+		 	var path = '',obj;
+			if(val=='b3'||val=='b5'||val=='b11'||val=='b12'){
+				path = 'img/'+val+'.jpg';
+			}else{
+				path = 'img/'+val+'.png';
+			}
+			rec.push(path)
+		});
+	});
+	rec.push('img/1.png')
+	rec.push('img/2.png')
+	rec.push('img/3.png')
+	rec.push('img/4.png')
+	rec.push('img/5.png')
+	rec.push('img/6.png')
+	rec.push('img/7.png')
+	rec.push('img/8.png')
+	rec.push('img/9.png')
+	rec.push('css/images/part1.png')
+	rec.push('css/images/part2.png')
+	rec.push('css/images/part3.png')
+	rec.push('css/images/part4.png')
+	rec.push('css/images/part5.png')
+	$.each(rec, function(index, val) {
+		 var image = new Image();
+		 image.src = val;
+		 image.onload = function() {
+		 	resMap.push(val)
+		}
+	});
+	var loadTimer = setTimeout(function() {
+		var flag = true;
+		for (var i = 0; i < rec.length; i++) {
+			flag = flag && (rec[i] in resMap);
+		}
+		if (flag) {
+			clearTimeout(loadTimer);
+			init();
+		} else {
+			loadTimer = setTimeout(arguments.callee, 500);
+		}
+	}, 500);
 })
