@@ -463,7 +463,6 @@ snsEvent.listen('toShare',function(){
 	},300)
 })
 function init() {
-	alert(1)
 	var assetsPath = "audio/";
 	var sounds = [
 		{src: "9.mp3", id: 0},
@@ -486,7 +485,6 @@ var backSound
 function soundLoaded(event) {
 	i++;	
 	if(i==9){
-		alert(2)
 		$('.loading').addClass('hide')
 		active.domEvents();
 		backSound = createjs.Sound.play(0,{loop:-1})
@@ -540,11 +538,7 @@ function GetRandomNum(Min,Max){
 		}
 	});
 	var loadTimer = setTimeout(function() {
-		var flag = true;
-		for (var i = 0; i < rec.length; i++) {
-			flag = flag && (rec[i] in resMap);
-		}
-		if (flag) {
+		if (rec.length==resMap.length) {
 			clearTimeout(loadTimer);
 			init();
 		} else {
