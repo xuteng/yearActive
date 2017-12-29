@@ -250,15 +250,22 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id);
+					$('.container').removeClass('part1 part2 part3 part4 part5 part6 nobg').addClass(this.id);
 					this.domIndex++;
 					return;
 				}
 				$('.container').addClass('nobg');
+				
 				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
 				this.domIndex++;
 			}else{
 				active.curDoms++;
+				$('.container').addClass('part2');
+				$('.actives').empty().append('<div class="enterP21"></div><div class="enterP22"></div>');
+				setTimeout(function(){
+					$('.actives').empty();
+					active.domAdd();
+				},400)
 				if(active.curDoms==active.activeDoms.length){
 					snsEvent.trigger('toShare')
 				}
@@ -271,7 +278,7 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id);
+					$('.container').removeClass('part1 part2 part3 part4 part5 part6 nobg').addClass(this.id);
 					this.domIndex++;
 					return;
 				}
@@ -284,6 +291,12 @@ var active = {
 				this.domIndex++;
 			}else{
 				active.curDoms++;
+				$('.container').addClass('part3');
+					$('.actives').empty().append('<div class="enterP31"></div><div class="enterP32"></div>');
+				setTimeout(function(){
+					$('.actives').empty();
+					active.domAdd();
+				},400)
 				if(active.curDoms==active.activeDoms.length){
 					snsEvent.trigger('toShare')
 				}
@@ -296,7 +309,7 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id);
+					$('.container').removeClass('part1 part2 part3 part4 part5 part6 nobg').addClass(this.id);
 					this.domIndex++;
 					return;
 				}
@@ -305,40 +318,48 @@ var active = {
 				this.domIndex++;
 			}else{
 				active.curDoms++;
+				$('.container').addClass('part5');
+				$('.actives').empty().append('<div class="enterP41"></div><div class="enterP42"></div>');
+				setTimeout(function(){
+					$('.actives').empty();
+					active.domAdd();
+				},400)
 				if(active.curDoms==active.activeDoms.length){
 					snsEvent.trigger('toShare')
 				}
 			}
 		}
-	},{
-		id:'part4',
-		doms:['d1','d2','d3','d4','d5','d6','d7','d8'],
-		domIndex:-1,
-		activeAction:function(){
-			if(this.domIndex<this.doms.length){
-				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id);
-					this.domIndex++;
-					return;
-				}
-				$('.container').addClass('nobg');
-				(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
-				this.domIndex++;
-			}else{
-				active.curDoms++;
-				if(active.curDoms==active.activeDoms.length){
-					snsEvent.trigger('toShare')
-				}
-			}
-		}
-	},{
+	},
+	// {
+	// 	id:'part4',
+	// 	doms:['d1','d2','d3','d4','d5','d6','d7','d8'],
+	// 	domIndex:-1,
+	// 	activeAction:function(){
+	// 		if(this.domIndex<this.doms.length){
+	// 			if(this.domIndex==-1){
+	// 				$('.container').removeClass('nobg').addClass(this.id);
+	// 				this.domIndex++;
+	// 				return;
+	// 			}
+	// 			$('.container').addClass('nobg');
+	// 			(active.animateActions[GetRandomNum(0,active.animateActions.length-1)])(this);
+	// 			this.domIndex++;
+	// 		}else{
+	// 			active.curDoms++;
+	// 			if(active.curDoms==active.activeDoms.length){
+	// 				snsEvent.trigger('toShare')
+	// 			}
+	// 		}
+	// 	}
+	// },
+	{
 		id:'part5',
 		doms:['e1','e2','e3','e4','e5','e6','e7','e8','e9','e10','e11','e12'],
 		domIndex:-1,
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id);
+					$('.container').removeClass('part1 part2 part3 part4 part5 part6 nobg').addClass(this.id);
 					this.domIndex++;
 					return;
 				}
@@ -347,6 +368,7 @@ var active = {
 				this.domIndex++;
 			}else{
 				active.curDoms++;
+				active.domAdd();
 				if(active.curDoms==active.activeDoms.length){
 					snsEvent.trigger('toShare')
 				}
@@ -359,7 +381,7 @@ var active = {
 		activeAction:function(){
 			if(this.domIndex<this.doms.length){
 				if(this.domIndex==-1){
-					$('.container').removeClass('nobg').addClass(this.id);
+					$('.container').removeClass('part1 part2 part3 part4 part5 part6 nobg').addClass(this.id);
 					this.domIndex++;
 					return;
 				}
@@ -403,7 +425,7 @@ var active = {
 		clearTimeout(this.noActTimer)
 		this.noActTimer = setTimeout(function(){
 			snsEvent.trigger('toShare')
-		},5000)
+		},4000)
 	},
 	domFirst:function(){
 		$('.title').addClass('active');
@@ -442,6 +464,7 @@ var active = {
 	}
 };
 var soundTimer1 = null;
+var isInit = true;
 snsEvent.listen('randomSounds',function(){
 	active.resetNoAct();
 	active.domAdd()
@@ -463,6 +486,7 @@ snsEvent.listen('toShare',function(){
 	},300)
 })
 function init() {
+	isInit = false
 	var assetsPath = "audio/";
 	var sounds = [
 		{src: "9.mp3", id: 0},
@@ -475,7 +499,6 @@ function init() {
 		{src: "7.mp3", id: 7},
 		{src: "8.mp3", id: 8}
 	];
-
 	createjs.Sound.alternateExtensions = ["mp3"];	// add other extensions to try loading if the src file extension is not supported
 	createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this)); // add an event listener for when load is completed
 	createjs.Sound.registerSounds(sounds, assetsPath);
@@ -528,7 +551,6 @@ function GetRandomNum(Min,Max){
 	rec.push('css/images/part1.png')
 	rec.push('css/images/part2.png')
 	rec.push('css/images/part3.png')
-	rec.push('css/images/part4.png')
 	rec.push('css/images/part5.png')
 	$.each(rec, function(index, val) {
 		 var image = new Image();
@@ -540,9 +562,53 @@ function GetRandomNum(Min,Max){
 	var loadTimer = setTimeout(function() {
 		if (rec.length==resMap.length) {
 			clearTimeout(loadTimer);
-			init();
+			isInit&&init();
 		} else {
 			loadTimer = setTimeout(arguments.callee, 500);
 		}
 	}, 500);
 })
+document.addEventListener("WeixinJSBridgeReady", function () { 
+		// 50ms轮询是否加载完毕
+	var rec = [],resMap=[];
+	$.each(active.activeDoms,function(index, el) {
+		$.each(el.doms, function(index, val) {
+		 	var path = '',obj;
+			if(val=='b3'||val=='b5'||val=='b11'||val=='b12'){
+				path = 'img/'+val+'.jpg';
+			}else{
+				path = 'img/'+val+'.png';
+			}
+			rec.push(path)
+		});
+	});
+	rec.push('img/1.png')
+	rec.push('img/2.png')
+	rec.push('img/3.png')
+	rec.push('img/4.png')
+	rec.push('img/5.png')
+	rec.push('img/6.png')
+	rec.push('img/7.png')
+	rec.push('img/8.png')
+	rec.push('img/9.png')
+	rec.push('css/images/part1.png')
+	rec.push('css/images/part2.png')
+	rec.push('css/images/part3.png')
+	rec.push('css/images/part5.png')
+	$.each(rec, function(index, val) {
+		 var image = new Image();
+		 image.src = val;
+		 image.onload = function() {
+		 	resMap.push(val)
+		}
+	});
+	var loadTimer = setTimeout(function() {
+		if (rec.length==resMap.length) {
+			clearTimeout(loadTimer);
+			isInit&&init();
+		} else {
+			loadTimer = setTimeout(arguments.callee, 500);
+		}
+	}, 500);
+}, false); 
+

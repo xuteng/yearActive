@@ -38,8 +38,7 @@ body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-se
 	height: 100%;
 	position: relative;
 	z-index: 1000;
-	transition: all .5s ease-in;
-	background-size: 0;
+	transition: all .2s linear
 }
 .container.part1{
 	background: url(images/part1.png) no-repeat center center #79cae5;
@@ -391,6 +390,111 @@ body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-se
     animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
     stroke-linecap: round;
 }
+.enterP21{
+	position: absolute;
+	width: 110vw;
+	top: -20%;
+	height: 130vh;
+	left:0;
+	transform: rotate(185deg) translateX(-50%);
+	background-color: #79cae5;
+	-webkit-animation: an21 .2s 1 linear forwards;
+}
+.enterP22{
+	position: absolute;
+	width: 100vw;
+	top: -20%;
+	height: 130vh;
+	right:0;
+	transform: rotate(-5deg) translateX(-50%);
+	background-color: #79cae5;
+    -webkit-animation: an22 .2s 1 linear forwards;
+    animation-delay: .2s
+}
+
+@keyframes an21{
+	0%{transform: rotate(185deg) translateX(-50%);}
+	99.99%{transform: rotate(355deg) translateX(-50%);background: #79cae5}
+	to {transform: rotate(175deg) translateX(-50%);z-index: 10;background: #4cbaad}
+}
+
+
+@keyframes an22{
+	0% {transform: rotate(-5deg) translateX(-50%);}
+	99.99%{transform: rotate(175deg) translateX(-50%);background: #79cae5}
+	100%{transform: rotate(175deg) translateX(-50%);background: #4cbaad}
+}
+.enterP31{
+	position: absolute;
+	width: 110vw;
+	top: -20%;
+	height: 130vh;
+	left:0;
+	transform: rotate(185deg) translateX(-50%);
+	background-color: #4cbaad;
+	-webkit-animation: an31 .2s 1 linear forwards;
+}
+.enterP32{
+	position: absolute;
+	width: 100vw;
+	top: -20%;
+	height: 130vh;
+	right:0;
+	transform: rotate(-5deg) translateX(-50%);
+	background-color: #4cbaad;
+    -webkit-animation: an32 .2s 1 linear forwards;
+    animation-delay: .2s
+}
+
+@keyframes an31{
+	0%{transform: rotate(185deg) translateX(-50%);}
+	99.99%{transform: rotate(355deg) translateX(-50%);background: #4cbaad}
+	to {transform: rotate(175deg) translateX(-50%);z-index: 10;background: #f6b55f}
+}
+
+
+@keyframes an32{
+	0% {transform: rotate(-5deg) translateX(-50%);}
+	99.99%{transform: rotate(175deg) translateX(-50%);background: #4cbaad}
+	100%{transform: rotate(175deg) translateX(-50%);background: #f6b55f}
+}
+
+
+.enterP41{
+	position: absolute;
+	width: 110vw;
+	top: -20%;
+	height: 130vh;
+	left:0;
+	transform: rotate(185deg) translateX(-50%);
+	background-color: #f6b55f;
+	-webkit-animation: an41 .2s 1 linear forwards;
+}
+.enterP42{
+	position: absolute;
+	width: 100vw;
+	top: -20%;
+	height: 130vh;
+	right:0;
+	transform: rotate(-5deg) translateX(-50%);
+	background-color: #f6b55f;
+    -webkit-animation: an42 .2s 1 linear forwards;
+    animation-delay: .2s
+}
+
+@keyframes an41{
+	0%{transform: rotate(185deg) translateX(-50%);}
+	99.99%{transform: rotate(355deg) translateX(-50%);background: #f6b55f}
+	to {transform: rotate(175deg) translateX(-50%);z-index: 10;background: #fff}
+}
+
+
+@keyframes an42{
+	0% {transform: rotate(-5deg) translateX(-50%);}
+	99.99%{transform: rotate(175deg) translateX(-50%);background: #f6b55f}
+	100%{transform: rotate(175deg) translateX(-50%);background: #fff}
+}
+
 @keyframes color {
   100%,
   0% {

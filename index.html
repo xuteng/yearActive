@@ -43,19 +43,7 @@
 			<div class="item"></div>
 			<div class="item"></div>
 			<div class="item"></div>
-			<div class="actives">
-<!-- 				<img src="img/f1.png" alt="" class="f1 f-hide">
-				<img src="img/f2.png" alt="" class="f2 f-hide">
-				<img src="img/f3.png" alt="" class="f3 f-hide">
-				<img src="img/f4.png" alt="" class="f4 f-hide">
-				<img src="img/f5.png" alt="" class="f5 f-hide">
-				<img src="img/f6.png" alt="" class="f6 f-hide">
-				<img src="img/f7.png" alt="" class="f7 f-hide">
-				<img src="img/f8.png" alt="" class="f8 f-hide">
-				<img src="img/f9.png" alt="" class="f9 f-hide">
-				<img src="img/f10.png" alt="" class="f10 f-hide">
-				<img src="img/f11.png" alt="" class="f11 f-hide"> -->
-			</div>
+			<div class="actives"></div>
 		</div>
 		<div class="wrap start">
 			<div class="content">
@@ -97,8 +85,23 @@
 	</div>
 	<!-- <audio src="audio/9.mp3" preload="auto" id="bg" style="display: none" loop="loop"></audio> -->
 	<script type="text/javascript" src="js/zepto.js"></script>
+	<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
 	<script type="text/javascript" src="js/createjs.min.js"></script>
 	<script type="text/javascript" src="js/snsEvent.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="http://www.yindudigital.com/cache/wx_config.php" id="c1"></script>
+	<script type="text/javascript">
+		var eventDomain = document.location.href.substr(0, document.location.href.lastIndexOf('/') + 1);
+		wxdatas = {
+			appid:'',
+			img_url:eventDomain+'img/share.jpg',
+			img_width:'120',
+			img_height:'120',
+			link:eventDomain,
+			desc:'跟着节拍，一起围观中国移动智慧政企电子渠道部门年终总结～',
+			title:'政企电子渠道2017年终主题曲',
+			url:''
+		}
+	</script>
 </body>
 </html>
