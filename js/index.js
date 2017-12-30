@@ -698,21 +698,40 @@ snsEvent.listen('toShare',function(){
 })
 function init() {
 	isInit = false
-	var assetsPath = "audio/";
-	var sounds = [
-		{src: "9.mp3", id: 0},
-		{src: "1.mp3", id: 1},
-		{src: "2.mp3", id: 2},
-		{src: "3.mp3", id: 3},
-		{src: "4.mp3", id: 4},
-		{src: "5.mp3", id: 5},
-		{src: "6.mp3", id: 6},
-		{src: "7.mp3", id: 7},
-		{src: "8.mp3", id: 8}
-	];
-	createjs.Sound.alternateExtensions = ["mp3"];	// add other extensions to try loading if the src file extension is not supported
-	createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this)); // add an event listener for when load is completed
-	createjs.Sound.registerSounds(sounds, assetsPath);
+	var queue = new createjs.LoadQueue(true,'http://www.yindudigital.cn/zq/20171230/');
+	queue.installPlugin(createjs.Sound);
+	queue.on("complete", handleComplete, this);
+	queue.loadManifest([
+		{src: "audio/9.mp3", id: 0},
+		{src: "audio/1.mp3", id: 1},
+		{src: "audio/2.mp3", id: 2},
+		{src: "audio/3.mp3", id: 3},
+		{src: "audio/4.mp3", id: 4},
+		{src: "audio/5.mp3", id: 5},
+		{src: "audio/6.mp3", id: 6},
+		{src: "audio/7.mp3", id: 7},
+		{src: "audio/8.mp3", id: 8}
+	]);
+	function handleComplete(event) {
+		$('.loading').addClass('hide')
+		active.domEvents();
+		backSound = createjs.Sound.play(0,{loop:-1})
+	}
+	// var assetsPath = "audio/";
+	// var sounds = [
+	// 	{src: "9.mp3", id: 0},
+	// 	{src: "1.mp3", id: 1},
+	// 	{src: "2.mp3", id: 2},
+	// 	{src: "3.mp3", id: 3},
+	// 	{src: "4.mp3", id: 4},
+	// 	{src: "5.mp3", id: 5},
+	// 	{src: "6.mp3", id: 6},
+	// 	{src: "7.mp3", id: 7},
+	// 	{src: "8.mp3", id: 8}
+	// ];
+	// createjs.Sound.alternateExtensions = ["mp3"];	// add other extensions to try loading if the src file extension is not supported
+	// createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this)); // add an event listener for when load is completed
+	// createjs.Sound.registerSounds(sounds, assetsPath);
 }
 var i= 0
 var backSound
@@ -724,12 +743,7 @@ function soundLoaded(event) {
 		backSound = createjs.Sound.play(0,{loop:-1})
 	}
 }
-function stop() {
-	if (preload != null) {
-		preload.close();
-	}
-	createjs.Sound.stop();
-}
+
 function GetRandomNum(Min,Max){   
 	var Range = Max - Min;   
 	var Rand = Math.random();   
