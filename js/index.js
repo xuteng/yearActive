@@ -491,7 +491,9 @@ var active = {
 			}else{
 				active.curDoms++;
 				if(active.curDoms==active.activeDoms.length){
-					snsEvent.trigger('toShare')
+					setTimeout(function(){
+						snsEvent.trigger('toShare')
+					})
 				}
 			}
 		}
@@ -515,6 +517,7 @@ var active = {
 			},400)
 		})
 		$('.share .content').on('click',function(event){
+			$('.actives').removeClass('hide');
 			if($(event.target).hasClass('btn-share')){
 				$('.share .share-container').addClass('show')
 				return
@@ -555,6 +558,7 @@ var active = {
 		},2000)
 	},
 	domAdd:function(){
+		$('.actives').removeClass('hide');
 		if(this.activeDoms.length==this.curDoms){
 			this.curDoms=0
 			$('.container').removeClass('part1 part2 part3 part4 part5 part6 nobg').find('.actives').empty()
@@ -581,8 +585,9 @@ snsEvent.listen('randomSounds',function(){
 	});
 });
 snsEvent.listen('toShare',function(){
-	$('.share').removeClass('hide')
-	$('.share .share-container').removeClass('show')
+	$('.actives').addClass('hide');
+	$('.share .share-container').removeClass('show');
+	$('.share').removeClass('hide').removeClass('hide');
 	setTimeout(function(){
 		active.domShare();
 	},300)
