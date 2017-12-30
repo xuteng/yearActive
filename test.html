@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{padding: 0;border:0}
+.outer{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: rotate(185deg);
+    clip: rect(0,100px,200px,0px);/* 这个clip属性用来绘制半圆，在clip的rect范围内的内容显示出来，使用clip属性，元素必须是absolute的 */
+    border-radius: 100px;
+    background-color: yellow;
+    -webkit-animation: an1 .2s 1 linear forwards;
+    }
+    
+    
+    .pie{
+        position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: rotate(-5deg);
+    clip: rect(0px,100px,200px,0px);
+    border-radius: 100px;
+    background-color: yellow;
+    -webkit-animation: an2 .2s 1 linear forwards;
+    animation-delay: .2s
+    }
+    @-webkit-keyframes an1{
+        0%{transform: rotate(185deg);}
+        99.99%{transform: rotate(355deg);background: yellow}
+        to {transform: rotate(175deg);z-index: 10;background: red}
+    }
+
+
+    @-webkit-keyframes an2{
+        0% {transform: rotate(-5deg);}
+        99.99%{transform: rotate(175deg);background: yellow}
+        100%{transform: rotate(175deg);background: red}
+    }
+    </style>
+</head>
+<body >
+        <div class="outer"></div>
+        <div class="pie"></div>
+</body>
+</html>
