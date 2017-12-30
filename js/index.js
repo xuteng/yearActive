@@ -55,10 +55,15 @@ var active = {
 		setTimeout(function(){
 			img.addClass('enter1').css({
 				top:GetRandomNum(10,70)+'%',
+				left:GetRandomNum(40,60)+'%',
 				transform:'translateX(-'+GetRandomNum(40,60)+'%)'
-			}).width(GetRandomNum(30,60)+'%');
+			}).width(GetRandomNum(40,60)+'%');
 			if(isSmall){
-				img.width(GetRandomNum(10,20)+'%')
+				if(domObj.doms[domObj.domIndex]=='c1'){
+					img.width(GetRandomNum(20,50)+'%')
+				}else{
+					img.width(GetRandomNum(10,20)+'%')
+				}
 			}
 		}.bind(this),300)
 		setTimeout(function(){
@@ -70,16 +75,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+' init2" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
 				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -94,16 +108,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
 				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -118,16 +141,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
 				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -142,16 +174,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
 				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -166,16 +207,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
 				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -190,16 +240,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
 				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -214,16 +273,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
-				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				left: GetRandomNum(10,40)+'%',
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -238,16 +306,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
-				top:GetRandomNum(20,60)+'%',
-				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				top:GetRandomNum(20,70)+'%',
+				left: GetRandomNum(5,50)+'%',
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -262,16 +339,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
 				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -286,16 +372,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(10,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
-				top:GetRandomNum(20,60)+'%',
-				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				top:GetRandomNum(20,50)+'%',
+				left: GetRandomNum(10,40)+'%',
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
@@ -310,16 +405,25 @@ var active = {
 	},function(domObj,isSmall){
 		var img = $('<img src="img\/'+domObj.doms[domObj.domIndex]+'.png" class="trans '+domObj.doms[domObj.domIndex]+'" />');
 		if(isSmall){
-			img.css({
-				top:GetRandomNum(20,80)+'%',
-				left: GetRandomNum(20,70)+'%',
-				width:GetRandomNum(10,20)+'%'
-			}).appendTo('.actives')
+			if(domObj.doms[domObj.domIndex]=='c1'){
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(20,70)+'%',
+					width:GetRandomNum(20,40)+'%'
+				}).appendTo('.actives')
+			}else{
+				img.css({
+					top:GetRandomNum(20,80)+'%',
+					left: GetRandomNum(10,70)+'%',
+					width:GetRandomNum(10,20)+'%'
+				}).appendTo('.actives')
+			}
+		
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
-				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(30,50)+'%'
+				left: GetRandomNum(10,50)+'%',
+				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
