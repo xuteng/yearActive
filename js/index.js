@@ -190,8 +190,8 @@ var active = {
 		
 		}else{
 			img.css({
-				top:GetRandomNum(20,60)+'%',
-				left: GetRandomNum(20,60)+'%',
+				top:GetRandomNum(20,70)+'%',
+				left: GetRandomNum(20,50)+'%',
 				width:GetRandomNum(40,50)+'%'
 			}).appendTo('.actives')
 		}
@@ -224,8 +224,8 @@ var active = {
 		}else{
 			img.css({
 				top:GetRandomNum(20,60)+'%',
-				left: GetRandomNum(20,60)+'%',
-				width:GetRandomNum(40,50)+'%'
+				left: GetRandomNum(20,50)+'%',
+				width:GetRandomNum(35,45)+'%'
 			}).appendTo('.actives')
 		}
 		setTimeout(function(){
