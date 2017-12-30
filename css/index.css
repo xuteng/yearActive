@@ -38,7 +38,6 @@ body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-se
 	height: 100%;
 	position: relative;
 	z-index: 1000;
-	transition: all .2s linear
 }
 .container.part1{
 	background: url(images/part1.png) no-repeat center center #79cae5;
@@ -390,6 +389,40 @@ body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-se
     animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
     stroke-linecap: round;
 }
+.enterP11{
+	position: absolute;
+	width: 110vw;
+	top: -20%;
+	height: 130vh;
+	left:0;
+	transform: rotate(185deg) translateX(-50%);
+	background-color: #023a6e;
+	-webkit-animation: an11 .2s 1 linear forwards;
+}
+.enterP12{
+	position: absolute;
+	width: 100vw;
+	top: -20%;
+	height: 130vh;
+	right:0;
+	transform: rotate(-5deg) translateX(-50%);
+	background-color: #023a6e;
+    -webkit-animation: an12 .2s 1 linear forwards;
+    animation-delay: .2s
+}
+
+@keyframes an11{
+	0%{transform: rotate(185deg) translateX(-50%);}
+	99.99%{transform: rotate(355deg) translateX(-50%);background: #023a6e}
+	to {transform: rotate(175deg) translateX(-50%);z-index: 10;background: #79cae5}
+}
+
+
+@keyframes an12{
+	0% {transform: rotate(-5deg) translateX(-50%);}
+	99.99%{transform: rotate(175deg) translateX(-50%);background: #023a6e}
+	100%{transform: rotate(175deg) translateX(-50%);background: #79cae5}
+}
 .enterP21{
 	position: absolute;
 	width: 110vw;
@@ -492,6 +525,41 @@ body{min-width:320px;line-height:1.5;font-family:Arial,Helvetica,STHeiTi,sans-se
 @keyframes an42{
 	0% {transform: rotate(-5deg) translateX(-50%);}
 	99.99%{transform: rotate(175deg) translateX(-50%);background: #f6b55f}
+	100%{transform: rotate(175deg) translateX(-50%);background: #fff}
+}
+
+.enterP51{
+	position: absolute;
+	width: 110vw;
+	top: -20%;
+	height: 130vh;
+	left:0;
+	transform: rotate(185deg) translateX(-50%);
+	background-color: #fff;
+	-webkit-animation: an51 .2s 1 linear forwards;
+}
+.enterP52{
+	position: absolute;
+	width: 100vw;
+	top: -20%;
+	height: 130vh;
+	right:0;
+	transform: rotate(-5deg) translateX(-50%);
+	background-color: #fff;
+    -webkit-animation: an52 .2s 1 linear forwards;
+    animation-delay: .2s
+}
+
+@keyframes an51{
+	0%{transform: rotate(185deg) translateX(-50%);}
+	99.99%{transform: rotate(355deg) translateX(-50%);background: #fff}
+	to {transform: rotate(175deg) translateX(-50%);z-index: 10;background: #fff}
+}
+
+
+@keyframes an52{
+	0% {transform: rotate(-5deg) translateX(-50%);}
+	99.99%{transform: rotate(175deg) translateX(-50%);background: #fff}
 	100%{transform: rotate(175deg) translateX(-50%);background: #fff}
 }
 

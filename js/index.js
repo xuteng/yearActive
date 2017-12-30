@@ -346,7 +346,12 @@ var active = {
 				this.domIndex++;
 			}else{
 				active.curDoms++;
-				$('.actives').empty();
+				$('.container').addClass('part5');
+				$('.actives').empty().append('<div class="enterP51"></div><div class="enterP52"></div>');
+				setTimeout(function(){
+					$('.actives').empty();
+					active.domAdd();
+				},400)
 				if(active.curDoms==active.activeDoms.length){
 					snsEvent.trigger('toShare')
 				}
@@ -411,7 +416,13 @@ var active = {
 		$('.start').on('click',function(){
 			$(this).addClass('hide')
 			that.curDoms=0;
-			that.domAdd()
+			// that.domAdd()
+			$('.container').addClass('part1');
+			$('.actives').empty().append('<div class="enterP11"></div><div class="enterP12"></div>');
+			setTimeout(function(){
+				$('.actives').empty();
+				active.domAdd();
+			},400)
 		})
 		$('.share .content').on('click',function(event){
 			if($(event.target).hasClass('btn-share')){
